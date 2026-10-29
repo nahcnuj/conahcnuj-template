@@ -23,6 +23,11 @@ Once configured, opening an issue triggers `.github/workflows/issue-driver.yml`,
 which calls the reusable conahcnuj driver. Owner approval triggers
 `.github/workflows/auto-merge.yml`.
 
+The driver also resumes on a failed required check through the `workflow_run`
+trigger, which watches a workflow named `CI`. If your CI workflow uses a
+different name, rename it to `CI` or update the `workflows: [CI]` entry in
+`.github/workflows/issue-driver.yml`.
+
 ## Workflows
 
 - `.github/workflows/issue-driver.yml` — drives issues/PRs via the reusable
