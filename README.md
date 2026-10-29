@@ -10,7 +10,10 @@ after owner approval.
 
 ## Setup
 
-1. Create a repository from this template.
+1. Create a repository from this template:
+   - GitHub web: open this repository and click **Use this template** -> **Create a new repository**.
+   - GitHub CLI: `gh repo create <new-repo> --template nahcnuj/conahcnuj-template --public`
+     (use `--private` instead of `--public` as needed).
 2. In the new repository, add the GitHub App secrets (Settings -> Secrets and variables -> Actions):
    - `APP_ID`
    - `INSTALLATION_ID`
