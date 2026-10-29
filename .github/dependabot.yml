@@ -1,5 +1,3 @@
-# Keeps the pinned GitHub Actions used by the workflows fresh.
-# Actions are pinned to full-length SHAs, so dependabot proposes the SHA bumps.
 version: 2
 updates:
   - package-ecosystem: "github-actions"
