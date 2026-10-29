@@ -34,5 +34,6 @@ different name, rename it to `CI` or update the `workflows: [CI]` entry in
 ## Workflows
 
 - `.github/workflows/issue-driver.yml` — drives issues/PRs via the reusable
-  `nahcnuj/conahcnuj` workflow.
+  `nahcnuj/conahcnuj` workflow. It also supports `workflow_dispatch` with a
+  `number` input to manually continue a specific issue or pull request.
 - `.github/workflows/auto-merge.yml` — enables auto-merge on owner approval.
