@@ -24,7 +24,7 @@ concurrency:
 
 jobs:
   drive:
-    uses: nahcnuj/conahcnuj/.github/workflows/issue-driver.yml@b3eddab5c0b6255c73a09b278bee4e1ef95e8861
+    uses: nahcnuj/conahcnuj/.github/workflows/issue-driver.yml@ac5411eab527f02e9917cfc1e9654b78aafcf80d
     with:
       number: ${{ github.event_name == 'issues' && github.event.issue.number || github.event_name == 'pull_request_review' && github.event.pull_request.number || (github.event_name == 'workflow_run' && github.event.workflow_run.pull_requests[0].number) || inputs.number }}
     secrets: inherit
