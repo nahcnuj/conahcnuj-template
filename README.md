@@ -18,7 +18,6 @@ after owner approval.
 3. Create an environment named `conahcnuj` (Settings -> Environments) and put the
    above secrets there (or rely on repository secrets).
 4. Enable **Allow auto-merge** (Settings -> General -> Pull Requests).
-5. Optionally configure branch protection requiring the `CI` check.
 
 Once configured, opening an issue triggers `.github/workflows/issue-driver.yml`,
 which calls the reusable conahcnuj driver. Owner approval triggers
@@ -29,4 +28,3 @@ which calls the reusable conahcnuj driver. Owner approval triggers
 - `.github/workflows/issue-driver.yml` — drives issues/PRs via the reusable
   `nahcnuj/conahcnuj` workflow.
 - `.github/workflows/auto-merge.yml` — enables auto-merge on owner approval.
-- `.github/workflows/ci.yml` — minimal CI; replace with your project's checks.
