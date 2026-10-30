@@ -10,7 +10,10 @@ after owner approval.
 
 ## Setup
 
-1. Create a repository from this template.
+1. Create a repository from this template:
+   - GitHub web: open this repository and click **Use this template** -> **Create a new repository**.
+   - GitHub CLI: `gh repo create <new-repo> --template nahcnuj/conahcnuj-template --public`
+     (use `--private` instead of `--public` as needed).
 2. In the new repository, add the GitHub App secrets (Settings -> Secrets and variables -> Actions):
    - `APP_ID`
    - `INSTALLATION_ID`
@@ -23,8 +26,14 @@ Once configured, opening an issue triggers `.github/workflows/issue-driver.yml`,
 which calls the reusable conahcnuj driver. Owner approval triggers
 `.github/workflows/auto-merge.yml`.
 
+The driver also resumes on a failed required check through the `workflow_run`
+trigger, which watches a workflow named `CI`. If your CI workflow uses a
+different name, rename it to `CI` or update the `workflows: [CI]` entry in
+`.github/workflows/issue-driver.yml`.
+
 ## Workflows
 
 - `.github/workflows/issue-driver.yml` — drives issues/PRs via the reusable
-  `nahcnuj/conahcnuj` workflow.
+  `nahcnuj/conahcnuj` workflow. It also supports `workflow_dispatch` with a
+  `number` input to manually continue a specific issue or pull request.
 - `.github/workflows/auto-merge.yml` — enables auto-merge on owner approval.
